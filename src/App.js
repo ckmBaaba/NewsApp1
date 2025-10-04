@@ -11,25 +11,28 @@ import {
 
 
 export default class App extends Component {
-  
- 
+  pageSize = 10;
+
+
   render() {
+
+
     return (
       <div>
         <Router>
-       <NavBar/>
-        <Routes>
-           
-          <Route exact path="/general"element={<News key="general" pageSize={5} country="us" category="general"/>}/>
-          <Route exact path="/Sports"element={<News key="Sports" pageSize={5} category="Sports"/>}/>
-          <Route exact path="/entertainment"element={<News key="entertainment" pageSize={5} category="entertainment"/>}/>
-          <Route exact path="/health"element={<News key="health" pageSize={5} category="health"/>}/>
-          <Route exact path="/science"element={<News key="science" pageSize={5} category="science"/>}/>
-          <Route exact path="/technology"element={<News key="technology" pageSize={5} category="technology"/>}/>
-           <Route exact path="/business"element={<News key="business" pageSize={5} country="us" category="business"/>}/>
-        </Routes>
+          <NavBar />
+          <Routes>
+
+            <Route exact path="/general" element={<News key="general" pageSize={this.pageSize} country="us" category="general" />} />
+            <Route exact path="/Sports" element={<News key="Sports" pageSize={this.pageSize} category="Sports" />} />
+            <Route exact path="/entertainment" element={<News key="entertainment" pageSize={this.pageSize} category="entertainment" />} />
+            <Route exact path="/health" element={<News key="health" pageSize={this.pageSize} category="health" />} />
+            <Route exact path="/science" element={<News key="science" pageSize={this.pageSize} category="science" />} />
+            <Route exact path="/technology" element={<News key="technology" pageSize={this.pageSize} category="technology" />} />
+            <Route exact path="/business" element={<News key="business" pageSize={this.pageSize} country="us" category="business" />} />
+          </Routes>
         </Router>
-      
+
       </div>
     )
   }
